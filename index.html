@@ -2,9 +2,217 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>首页</title>
+    <link href="css/cssReset.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
 </head>
-<body>
-<div>第一个html页面123</div>
+<body ng-app="">
+
+<div ng-include="'header.html'"></div>
+
+<!-- 内容栏start -->
+<div class="main">
+
+    <div ng-include="'navLeft.html'"></div>
+
+    <!-- 中间start -->
+    <div class="main_c">
+        <div class="c_img">
+            <a href="#"><img src="image/test.jpg"></a>
+        </div>
+        <div class="c_category">
+            <div class="c_invest">
+                <div class="c_title">应用领域</div>
+                <div class="c_ul">
+                    <ul>
+                        <li><a href="#">不限</a></li>
+                        <li><a href="#" class="">互联网应用</a></li>
+                        <li><a href="#" class="">桌面应用</a></li>
+                        <li><a href="#" class="">移动应用</a></li>
+                        <li><a href="#" class="">界面设计</a></li>
+                        <li><a href="#" class="">数据服务</a></li>
+                        <li><a href="#" class="">智能硬件</a></li>
+                        <li><a href="#" class="">电商</a></li>
+                        <li><a href="#" class="">游戏</a></li>
+                        <li><a href="#" class="">企业级服务</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="c_phrase">
+                <div class="c_title">项目预算</div>
+                <div class="c_ul">
+                    <ul>
+                        <li><a href="#">不限</a></li>
+                        <li><a href="#" class="">1千以下</a></li>
+                        <li><a href="#" class="">1千~5千</a></li>
+                        <li><a href="#" class="">5千~1万</a></li>
+                        <li><a href="#" class="">5万~10万</a></li>
+                        <li><a href="#" class="">10万以上</a></li>
+                        <li><a href="#" class="">待商议</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="c_skill">
+                <div class="c_title">技能</div>
+                <div class="c_ul">
+                    <ul>
+                        <li><a href="#">java</a></li>
+                        <li><a href="#">mysql</a></li>
+                        <li><a href="#">c/c++</a></li>
+                        <li><a href="#">html5/css</a></li>
+                        <li><a href="#">ios</a></li>
+                        <li><a href="#" class="">android</a></li>
+                        <li><a href="#" class="">ps设计</a></li>
+                        <li><a href="#" class="">php</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="c_city">
+                <div class="c_title">所在地区</div>
+                <div class="c_ul">
+                    <ul>
+                        <li><a href="#">不限</a></li>
+                        <li><a href="#" class="">北京</a></li>
+                        <li><a href="#" class="">上海</a></li>
+                        <li><a href="#" class="">深圳</a></li>
+                        <li><a href="#" class="">广州</a></li>
+                        <li><a href="#" class="">杭州</a></li>
+                        <li><a href="#" class="">大连</a></li>
+                        <li><a href="#" class="">武汉</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="main_progect">
+
+            <div class="project_item">
+                <div class="project_top">火车站室内GIS</div>
+                <div class="project_center">
+                    <div>
+                        互联网应用
+                    </div>
+                    <div>
+                        <span>技能</span>
+                        <span class="project_margin">java</span>
+                        <span class="project_margin">c++</span>
+                    </div>
+                </div>
+                <div class="project_bottom">
+                    <span>预算<span class="project_margin">10万以上</span></span>
+                    <span>人气<span class="project_margin">112</span></span>
+                    <span>发布日期<span class="project_margin">2017.03.16</span></span>
+                    <span>截止日期<span class="project_margin">2017.03.26</span></span>
+                </div>
+            </div>
+
+            <div class="project_line"></div>
+
+            <div class="project_item">
+                <div class="project_top">网站测试---需要找团队对新建的中英文电商类网站测试</div>
+                <div class="project_center">
+                    <div>
+                        互联网应用
+                    </div>
+                    <div>
+                        <span>技能</span>
+                        <span class="project_margin">java</span>
+                        <span class="project_margin">c++</span>
+                    </div>
+                </div>
+                <div class="project_bottom">
+                    <span>预算<span class="project_margin">10万以上</span></span>
+                    <span>人气<span class="project_margin">112</span></span>
+                    <span>发布日期<span class="project_margin">2017.03.16</span></span>
+                    <span>截止日期<span class="project_margin">2017.03.26</span></span>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- 中间end -->
+
+    <div class="main_r">
+
+        <div class="main_vote">
+            <div class="vote_title">今日热门投票</div>
+            <div class="vote_question">摩拜和ofo的单车之战正在进行，你认为共享单车未来最主要盈利模式是什么？</div>
+            <div class="vote_ckeck">
+                <div><span><span class="vote_margin">A</span>用押金做金融来获利</span><input type="radio" name="check" /></div>
+                <div class="vote_progress"></div>
+
+                <div><span><span class="vote_margin">B</span>捆绑保险销售获取额外营收</span><input type="radio" name="check" /></div>
+                <div class="vote_progress"></div>
+
+                <div><span><span class="vote_margin">C</span>搭建以单车为主体的健身活动</span><input type="radio" name="check" /></div>
+                <div class="vote_progress"></div>
+
+                <div><span><span class="vote_margin">D</span>内容广告</span><input type="radio" name="check" /></div>
+                <div class="vote_progress"></div>
+            </div>
+
+            <div class="vote_btn"><input type="button" value="投票"/></div>
+        </div>
+
+        <div class="main_hot">
+            <div class="hot_title">热门</div>
+
+            <div class="hot_item">
+                <div>1</div>
+                <div><a href="projectInfo.html">网站测试---需要找团队对新建的中英文电商类网站测试</a></div>
+            </div>
+            <div class="hot_item">
+                <div>2</div>
+                <div><a href="projectInfo.html">网站测试---需要找团队对新建的中英文电商类网站测试</a></div>
+            </div>
+            <div class="hot_item">
+                <div>3</div>
+                <div>网站测试---需要找团队对新建的中英文电商类网站测试</div>
+            </div>
+            <div class="hot_item">
+                <div>4</div>
+                <div>网站测试---需要找团队对新建的中英文电商类网站测试</div>
+            </div>
+            <div class="hot_item">
+                <div>5</div>
+                <div>网站测试---需要找团队对新建的中英文电商类网站测试</div>
+            </div>
+            <div class="hot_item">
+                <div>6</div>
+                <div>网站测试---需要找团队对新建的中英文电商类网站测试</div>
+            </div>
+            <div class="hot_item">
+                <div>7</div>
+                <div>网站测试---需要找团队对新建的中英文电商类网站测试</div>
+            </div>
+            <div class="hot_item">
+                <div>8</div>
+                <div>网站测试---需要找团队对新建的中英文电商类网站测试</div>
+            </div>
+            <div class="hot_item">
+                <div>9</div>
+                <div>网站测试---需要找团队对新建的中英文电商类网站测试</div>
+            </div>
+            <div class="hot_item">
+                <div>10</div>
+                <div>网站测试---需要找团队对新建的中英文电商类网站测试</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- 内容栏end -->
+
+<div>
+    <a class="load" href="#">↓加载更多投资人↓</a>
+</div>
+
+<div ng-include="'footer.html'"></div>
 </body>
+<script src="//cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
 </html>
