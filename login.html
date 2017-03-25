@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link href="css/cssReset.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+</head>
+<body ng-app="">
+
+<div ng-include="'header.html'"></div>
+
+    <div class="main">
+        <div class="main_form">
+            <div class="main_title">登录</div>
+            <div class="main_tel main_input_comm">
+                <span></span>
+                <input type="text" placeholder="输入手机号/邮箱"/>
+            </div>
+            <div class="main_pw main_input_comm">
+                <span></span>
+                <input type="password" placeholder="输入密码"/>
+            </div>
+            <div class="main_p">
+                <div><input type="checkbox" /><span>记住密码</span></div>
+                <div><a href="#">忘记密码?</a></div>
+            </div>
+            <div class="main_loginBtn">
+                <input type="button" value="立即登录" />
+            </div>
+            <div class="main_registerBtn">
+                <input type="button" value="注册账号" onclick="toRegister()" />
+            </div>
+        </div>
+    </div>
+
+<div ng-include="'footer.html'"></div>
+</body>
+<script src="//cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+<script>
+    function toRegister() {
+        window.location.href = "register.html";
+    }
+</script>
+</html>

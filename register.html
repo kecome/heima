@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link href="css/cssReset.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/register.css" rel="stylesheet">
+</head>
+<body ng-app="">
+
+<div ng-include="'header.html'"></div>
+
+    <div class="main">
+        <div class="main_form">
+            <div class="main_title">注册帐号</div>
+            <div class="main_tel main_input_comm">
+                <span></span>
+                <input type="text" id="tel" placeholder="请输入您的手机号码"/>
+            </div>
+            <div class="main_pw main_input_comm">
+                <span></span>
+                <input type="password" placeholder="请输入验证码"/>
+                <a><img src="http://www.iheima.com/user/captchaUserRegister?v=58caa0339e1f9"></a>
+
+            </div>
+            <div class="main_p">
+                <span>点击“立即注册”,即表示您同意并愿意遵守</span>
+                <a href="#">注册用户协议</a>
+            </div>
+            <div class="main_loginBtn">
+                <input type="button" onclick="sendCode()" value="立即注册" />
+            </div>
+        </div>
+    </div>
+
+<div ng-include="'footer.html'"></div>
+</body>
+<script src="//cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+<script>
+    function sendCode() {
+        var tel = document.getElementById("tel").value;
+        window.location.href = "registerCode.html?tel=" + tel;
+    }
+</script>
+</html>

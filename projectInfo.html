@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>项目详情</title>
+    <link href="css/cssReset.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/projectInfo.css" rel="stylesheet">
+</head>
+<body ng-app="">
+<div ng-include="'header.html'"></div>
+
+<!-- 内容栏start -->
+<div class="main">
+    <div ng-include="'navLeft.html'"></div>
+
+    <div class="center_info">
+        <div class="center_image">
+            <div class="l_image"><img src="image/project.jpg"></div>
+            <div class="r_title">左边</div>
+        </div>
+
+        <div class="project">
+            <div class="project_info">
+
+                <div class="member">
+                    <div class="member_title m_title">发布人信息</div>
+                    <div class="member_info">
+                        <div class="member_photo"><img src=""></div> <!-- http://file.iheima.com/static/ihm/527a74/images/avatar.png -->
+                        <div class="member_txt">
+                            <div><span class="member_name">待补充</span>黑马会员</div>
+                            <div>杭州糖礼纪科技信息有限公司｜创始人</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="info_title m_title">项目详情</div>
+                    <div class="info_content">引进全世界最优质的糖果，把个性化、情感化、定制化作为产品特性，做具有中国时尚、传统习俗的产品，打造中国第一情怀糖果礼品品牌。</div>
+                </div>
+                <!--
+                <div class="demands">
+                    <div class="m_title">项目需求</div>
+                    <div class="info_content">引进全世界最优质的糖果，把个性化、情感化、定制化作为产品特性，做具有中国时尚、传统习俗的产品，打造中国第一情怀糖果礼品品牌。</div>
+                </div>
+                -->
+                <div class="skills">
+                    <div class="m_title">技能要求</div>
+                    <div class="info_content">引进全世界最优质的糖果，把个性化、情感化、定制化作为产品特性，做具有中国时尚、传统习俗的产品，打造中国第一情怀糖果礼品品牌。</div>
+                </div>
+                <div class="comment">
+                    <div class="m_title">评论</div>
+                    <div class="comment_send">
+                        <div>
+                            <div>
+                                <div class="comment_photo"></div>
+                                <div class="wangYou">网友</div>
+                            </div>
+                            <div class="comment_text">
+                                <textarea placeholder="发表简短评论"></textarea>
+                            </div>
+                        </div>
+                        <div class="comment_code">
+                            <input type="text" placeholder="验证码" />
+                            <div class="code_image">
+                                <img src="http://app.iheima.com/?app=system&controller=seccode&action=image&height=38&=4.176014802768609">
+                            </div>
+                            <div class="code_btn">发布</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="comment_more">没有更多了</div>
+
+
+            </div>
+            <div class="project_similar">
+                <div class="similar_title m_title">相似</div>
+
+
+                <div class="similar_item">
+                    <div>1</div><a>网站测试---需要找团队对新建的中英文电商类网站测试</a>
+                </div>
+                <div class="similar_item">
+                    <div>2</div><a>网站测试---需要找团队对新建的中英文电商类网站测试</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+<div ng-include="'footer.html'"></div>
+
+</body>
+<script src="//cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+</html>
