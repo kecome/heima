@@ -26,7 +26,7 @@
     height: 312px;
     background: bisque;
 }
-.l_image > image {
+.l_image image {
     width: 500px;
     height: 312px;
 }
