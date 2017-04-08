@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>首页</title>
-    <link href="css/cssReset.css" rel="stylesheet">
-    <link href="css/common.css" rel="stylesheet">
-    <link href="css/index.css" rel="stylesheet">
+    <title>人才</title>
+    <link href="../css/cssReset.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/people.css" rel="stylesheet">
 </head>
 <body ng-app="">
-
 <div ng-include="'header.html'"></div>
 
 <!-- 内容栏start -->
@@ -19,14 +18,14 @@
     <!-- 中间start -->
     <div class="main_c">
         <div class="c_img">
-            <a href="#"><img src="image/test.jpg"></a>
+            <a href="#"><img src="../image/test.jpg"></a>
             <div class="c_overmask"></div>
             <div class="c_wrap">
                 <div class="wrap_titile">创新企业的综合创业服务机构</div>
                 <div class="wrap_content">自2008年成立以来，现已发展成为一个集学习、融资、推广、社交等为一体O2O创业孵化加速器，涵盖创业教育、创业金融和创业公关等创业服务。</div>
                 <div class="wrap_btn">
                     <input class="wrap_btn1" type="button" value="我要发项目">
-                    <input class="wrap_btn2" type="button" value="我要找人才">
+                    <input class="wrap_btn2" type="button" value="认证投资人">
                 </div>
             </div>
         </div>
@@ -45,21 +44,6 @@
                         <li><a href="#" class="">电商</a></li>
                         <li><a href="#" class="">游戏</a></li>
                         <li><a href="#" class="">企业级服务</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="c_phrase">
-                <div class="c_title">项目预算</div>
-                <div class="c_ul">
-                    <ul>
-                        <li><a href="#">不限</a></li>
-                        <li><a href="#" class="">1千以下</a></li>
-                        <li><a href="#" class="">1千~5千</a></li>
-                        <li><a href="#" class="">5千~1万</a></li>
-                        <li><a href="#" class="">5万~10万</a></li>
-                        <li><a href="#" class="">10万以上</a></li>
-                        <li><a href="#" class="">待商议</a></li>
                     </ul>
                 </div>
             </div>
@@ -97,52 +81,51 @@
             </div>
         </div>
 
-        <div class="main_progect">
+        <div class="main_people">
 
-            <div class="project_item">
-                <div class="project_top">火车站室内GIS</div>
-                <div class="project_center">
-                    <div>
-                        互联网应用
+            <div class="people_item">
+                <div class="people_photo">陆</div>
+                <div class="people_info">
+                    <div class="info_name">
+                        <span>陆明华</span><span>黑马导师</span>
                     </div>
-                    <div>
-                        <span>技能</span>
-                        <span class="project_margin">java</span>
-                        <span class="project_margin">c++</span>
+                    <div class="info_field">
+                        <span>擅长领域：</span><span>种菜，放羊，砍树</span>
+                    </div>
+                    <div class="info_skill">
+                        <span>擅长技能：</span><span>java,c++, mysql</span>
                     </div>
                 </div>
-                <div class="project_bottom">
-                    <span>预算<span class="project_margin">10万以上</span></span>
-                    <span>人气<span class="project_margin">112</span></span>
-                    <span>发布日期<span class="project_margin">2017.03.16</span></span>
-                    <span>截止日期<span class="project_margin">2017.03.26</span></span>
+                <div class="people_talk">
+                    <input type="button" value="发送邀请">
+                    <span>仅黑马用户</span>
+                    <span>已收到10份邀请</span>
                 </div>
             </div>
 
-            <div class="project_line"></div>
-
-            <div class="project_item">
-                <div class="project_top">网站测试---需要找团队对新建的中英文电商类网站测试</div>
-                <div class="project_center">
-                    <div>
-                        互联网应用
+            <div class="people_item">
+                <div class="people_photo">徐</div>
+                <div class="people_info">
+                    <div class="info_name">
+                        <span>陆明华</span><span>黑马导师</span>
                     </div>
-                    <div>
-                        <span>技能</span>
-                        <span class="project_margin">java</span>
-                        <span class="project_margin">c++</span>
+                    <div class="info_field">
+                        <span>擅长领域：</span><span>种菜，放羊，砍树</span>
+                    </div>
+                    <div class="info_skill">
+                        <span>擅长技能：</span><span>java,c++, mysql</span>
                     </div>
                 </div>
-                <div class="project_bottom">
-                    <span>预算<span class="project_margin">10万以上</span></span>
-                    <span>人气<span class="project_margin">112</span></span>
-                    <span>发布日期<span class="project_margin">2017.03.16</span></span>
-                    <span>截止日期<span class="project_margin">2017.03.26</span></span>
+                <div class="people_talk">
+                    <input type="button" value="发送邀请">
+                    <span class="">仅黑马用户</span>
+                    <span>已收到10份</span>
                 </div>
             </div>
+
 
             <div>
-                <a class="load" href="#">↓加载更多投资人↓</a>
+                <a class="load" href="#">↓加载更多↓</a>
             </div>
 
         </div>
@@ -172,47 +155,47 @@
         </div>
 
         <div class="main_hot">
-            <div class="hot_title">都在看<img src="image/hot.gif"></div>
+            <div class="hot_title">人才榜<img src="../image/hot.gif"></div>
 
             <div class="hot_item">
                 <div>1</div>
-                <div><a href="projectInfo.html">网站测试---需要找团队对新建的中英文电商类网站测试</a></div>
+                <div><a href="projectInfo.html">陆明华</a><span>人气:1001</span></div>
             </div>
             <div class="hot_item">
                 <div>2</div>
-                <div><a href="projectInfo.html">网站测试---需要找团队对新建的中英文电商类网站测试</a></div>
+                <div><a href="projectInfo.html">刘子渲</a></div>
             </div>
             <div class="hot_item">
                 <div>3</div>
-                <div><a>网站测试---需要找团队对新建的中英文电商类网站测试</a></div>
+                <div><a>邓雅匀</a></div>
             </div>
             <div class="hot_item">
                 <div>4</div>
-                <div><a>网站测试---需要找团队对新建的中英文电商类网站测试</a></div>
+                <div><a>耿贵波</a></div>
             </div>
             <div class="hot_item">
                 <div>5</div>
-                <div><a>网站测试---需要找团队对新建的中英文电商类网站测试</a></div>
+                <div><a>鈡鉠</a></div>
             </div>
             <div class="hot_item">
                 <div>6</div>
-                <div><a>网站测试---需要找团队对新建的中英文电商类网站测试</a></div>
+                <div><a>赵山利</a></div>
             </div>
             <div class="hot_item">
                 <div>7</div>
-                <div><a>网站测试---需要找团队对新建的中英文电商类网站测试</a></div>
+                <div><a>刘子健</a></div>
             </div>
             <div class="hot_item">
                 <div>8</div>
-                <div><a>网站测试---需要找团队对新建的中英文电商类网站测试</a></div>
+                <div><a>孙艳华</a></div>
             </div>
             <div class="hot_item">
                 <div>9</div>
-                <div><a>网站测试---需要找团队对新建的中英文电商类网站测试</a></div>
+                <div><a>芦新亮</a></div>
             </div>
             <div class="hot_item">
                 <div>10</div>
-                <div><a>网站测试---需要找团队对新建的中英文电商类网站测试</a></div>
+                <div><a>李晓敏</a></div>
             </div>
 
         </div>
@@ -220,13 +203,8 @@
 </div>
 <!-- 内容栏end -->
 
-<!--
-<div>
-    <a class="load" href="#">↓加载更多投资人↓</a>
-</div>
--->
-
 <div ng-include="'footer.html'"></div>
+
 </body>
 <script src="//cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
 </html>

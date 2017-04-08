@@ -49,6 +49,12 @@ header {
     display: flex;
    /* position: relative; */
 }
+.header_photo {
+    margin-right: 15px;
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+}
 .header_input a:active {
     background-color: #DACEDA;
 }
