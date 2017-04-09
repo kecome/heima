@@ -3,12 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <style>
+        body {
+            background: black;
+        }
+        canvas {
+            background: white;
+        }
+    </style>
+
 </head>
 <body>
-<body ng-app="">
 
-<div ng-include="'header.html'"></div>
+<canvas id="can" width="400" height="400">
+
+</canvas>
+<script>
+    var c=document.getElementById("can");
+    var ctx=c.getContext("2d");
+//    toDraw();
+
+//    ctx.save();
+//    ctx.beginPath();
+//    ctx.lineWidth = 20;
+//    ctx.lineCap = 'round';
+//    ctx.moveTo(100, 100);
+//    ctx.lineTo(200, 200);
+//    ctx.closePath();
+//    ctx.stroke();
+//    ctx.restore();
+
+//    ctx.strokeStyle = 'red';
+//    ctx.fillStyle = 'black';
+//    ctx.lineWidth = 20;
+//    ctx.lineJoin = 'bevel';
+//    ctx.fillRect(80, 50, 100, 100);
+//    ctx.strokeRect(80.5, 50.5, 100, 100);
+
+
+//    ctx.save();
+//    ctx.fillStyle = 'red';
+//    ctx.beginPath();
+//    ctx.moveTo(100, 100);
+//    ctx.lineTo(200, 200);
+//    ctx.lineTo(300, 200);
+//    ctx.closePath();
+//    ctx.fill();
+//    ctx.restore();
+//
+//    ctx.beginPath();
+//    ctx.moveTo(100, 200);
+//    ctx.lineTo(200, 300);
+//    ctx.lineTo(300, 300);
+//    ctx.closePath();
+//    ctx.fill();
+
+//    ctx.beginPath();
+//    ctx.rect(100.5, 100.5, 100, 200);
+//    ctx.closePath();
+//    ctx.fill();
+//    ctx.clearRect(0, 0, c.width, c.height);
+
+
+//    c.onmousedown = function (ev) {
+//        var ev = ev || window.event;
+//        ctx.moveTo(ev.clientX - c.offsetLeft, ev.clientY-c.offsetTop);
+//
+//        document.onmousemove = function (ev) {
+//            var ev = ev || window.event;
+//            ctx.lineTo(ev.clientX - c.offsetLeft, ev.clientY-c.offsetTop);
+//            ctx.stroke();
+//        }
+//        document.onmouseup = function () {
+//            document.onmousemove = null;
+//            document.onmouseup = null;
+//        }
+//    }
+
+
+//    var num = 0;
+//    ctx.fillRect(0, 0, 100, 100);
+//    setInterval(function () {
+//        num ++;
+//        ctx.clearRect(0, 0, c.width, c.height);
+//        ctx.fillRect(num, num, 100, 100);
+//    }, 30);
+
+//    ctx.beginPath();
+//    ctx.moveTo(200, 200);
+//    ctx.arc(200, 200, 150, 0, 90*Math.PI/180, false);
+//    ctx.closePath();
+//    ctx.stroke();
+
+//    function toDraw() {
+//        var x = 200.5;
+//        var y = 200.5;
+//        var r = 150;
+//
+//        ctx.beginPath()
+//        for(var i = 0;i<60;i++) {
+//            ctx.moveTo(x, y);
+//            ctx.arc(x, y, r,i*6*Math.PI/180, (i+1)*6*Math.PI/180, false);
+//
+//        }
+//        ctx.closePath();
+//        ctx.stroke();
+//
+//        ctx.fillStyle='white';
+//        ctx.beginPath();
+//        ctx.moveTo(x, y);
+//        ctx.arc(x, y, r*19/20, 360*Math.PI/180, false);
+//        ctx.closePath();
+//        ctx.fill();
+//
+//        ctx.lineWidth=3;
+//        ctx.beginPath()
+//        for(var i = 0;i<12;i++) {
+//            ctx.moveTo(x, y);
+//            ctx.arc(x, y, r,i*30*Math.PI/180, (i+1)*30*Math.PI/180, false);
+//
+//        }
+//        ctx.closePath();
+//        ctx.stroke();
+//
+//        ctx.fillStyle='white';
+//        ctx.beginPath();
+//        ctx.moveTo(x, y);
+//        ctx.arc(x, y, r*18/20, 0,360*Math.PI/180, false);
+//        ctx.closePath();
+//        ctx.fill();
+//
+//        ctx.lineWidth = 5;
+//        ctx.beginPath();
+//        ctx.moveTo(x, y);
+//        ctx.arc(x, y, r*10/20, 0,0, false);
+//        ctx.closePath();
+//        ctx.stroke();
+//
+//        ctx.lineWidth = 3;
+//        ctx.beginPath();
+//        ctx.moveTo(x, y);
+//        ctx.arc(x, y, r*14/20, 1,1, false);
+//        ctx.closePath();
+//        ctx.stroke();
+//
+//        ctx.lineWidth = 1;
+//        ctx.beginPath();
+//        ctx.moveTo(x, y);
+//        ctx.arc(x, y, r*18/20, 2,2, false);
+//        ctx.closePath();
+//        ctx.stroke();
+//
+//    }
+
+
+//    var num = 0;
+//    ctx.translate(150, 150);
+//
+//    setInterval(function () {
+//
+//        ctx.clearRect(0, 0, c.width, c.height);
+//        num ++;
+//        ctx.save();
+//
+//        ctx.rotate(num*Math.PI/180);
+//        ctx.fillRect(0,0,100,100);
+//        ctx.restore();
+//    }, 30);
+
+    var img = new Image();
+    img.onload = function () {
+        draw(this);
+    };
+    img.src = '../image/test.jpg';
+    
+    function draw(obj) {
+        ctx.drawImage(obj, 0, 0, 400, 400);
+    }
+
+</script>
+
 
 </body>
+
+
+
 </html>
