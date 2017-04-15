@@ -10,6 +10,22 @@
         canvas {
             background: white;
         }
+        #img_div {
+            position: fixed;
+        }
+        #image {
+            display: inline;
+        }
+        #move {
+            position: absolute;
+            top: 5px;
+            left: 30px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            z-index: 100;
+            float: left;
+        }
     </style>
 
 </head>
@@ -18,6 +34,14 @@
 <canvas id="can" width="400" height="400">
 
 </canvas>
+<div id="img_div">
+    <img src="../image/test.jpg" style="width: 400px;height: 300px" id="image">
+    <div id="move">
+        <canvas id="c" width="100" height="100" style="background: white"></canvas>
+    </div>
+</div>
+
+
 <script>
     var c=document.getElementById("can");
     var ctx=c.getContext("2d");
@@ -178,8 +202,50 @@
     img.src = '../image/test.jpg';
     
     function draw(obj) {
-        ctx.drawImage(obj, 0, 0, 400, 400);
+        ctx.drawImage(obj, 0, 0, 300, 300, 2,20,200,200);
     }
+
+    var move = document.getElementById("move");
+//    move.onmousedown = function (ev) {
+//        var ev = ev || window.event;
+//        var startX = ev.clientX;
+//        var startY = ev.clientY
+//
+//        document.onmousemove = function (ev) {
+//            var ev = ev || window.event;
+//            var offsetX = ev.clientX - startX;
+//            var offsetY = ev.clientY - startY;
+//            move.style.left = move.offsetLeft + offsetX + "px";
+//            move.style.top = move.offsetTop + offsetY + "px";
+//            //move.offsetLeft = move.offsetLeft + offsetX + "px";
+//            //move.offsetTop = move.offsetTop + offsetY + "px";
+//            console.log(offsetX + "||"  + offsetY);
+//        }
+//        document.onmouseup = function () {
+//            document.onmousemove = null;
+//            document.onmouseup = null;
+//        }
+//    }
+
+
+        var div1 = document.getElementById("move");
+        div1.onmousedown = function(ev){
+            var oevent = ev || event;
+
+            var distanceX = oevent.clientX - div1.offsetLeft;
+            var distanceY = oevent.clientY - div1.offsetTop;
+
+            document.onmousemove = function(ev){
+                var oevent = ev || event;
+                div1.style.left = oevent.clientX - distanceX + 'px';
+                div1.style.top = oevent.clientY - distanceY + 'px';
+            };
+            document.onmouseup = function(){
+                document.onmousemove = null;
+                document.onmouseup = null;
+            };
+
+        }
 
 </script>
 

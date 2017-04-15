@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            background: white;
+        }
+        #img_div {
+            position: fixed;
+        }
+        #image {
+            display: inline;
+        }
+        #move {
+            position: absolute;
+            top: 5px;
+            left: 30px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            z-index: 100;
+            float: left;
+        }
+        .mask {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 10;
+            width: 400px;
+            height: 400px;
+            /*opacity:0.3;*/
+            /*filter:alpha(opacity=60);*/
+            /*background-color:#f00;*/
+            background:rgba(255,0,0,0.3);
+        }
+    </style>
+
+</head>
+<body>
+<input type="file" id="file"><a href="#" id="save">保存</a>
+<div id="img_div">
+    <!-- ../image/test.jpg -->
+    <img src="" id="image" style="width: 400px;height: 400px">
+    <div class="mask1">
+
+    </div>
+    <div id="move">
+        <canvas id="c" width="100" height="100" style="background: white"></canvas>
+    </div>
+</div>
+
+
+<script>
+    var save = document.getElementById("save");
+
+    var file = document.getElementById("file");
+
+
+    var move = document.getElementById("move");
+    var image  = document.getElementById("image");
+
+    var c=document.getElementById("c");
+    var ctx=c.getContext("2d");
+
+    var img = new Image();
+    file.onchange = function () {
+        var f = this.files[0];
+        var reader = new FileReader();
+        reader.readAsDataURL(f);
+        reader.onload = function(e){
+            img.src = this.result;
+
+            img.onload = function () {
+                var canvas = convertImageToCanvas(img, 400, 400);
+                image.src = canvas.toDataURL("image/png");
+                image.onload = function () {
+                    ctx.drawImage(image, move.offsetLeft, move.offsetTop, move.offsetWidth, move.offsetHeight, 0,0,move.offsetWidth,move.offsetHeight);
+                }
+            };
+
+        }
+    }
+
+    
+    //img.src = '../image/test.jpg';
+
+
+
+
+    move.onmousedown = function(ev){
+        var oevent = ev || event;
+
+        var distanceX = oevent.clientX - move.offsetLeft;
+        var distanceY = oevent.clientY - move.offsetTop;
+
+        document.onmousemove = function(ev){
+            var oevent = ev || event;
+            var x = oevent.clientX - distanceX;
+            var y = oevent.clientY - distanceY;
+            if(x < 0) x = 0;
+            if(y < 0) y = 0;
+            if(x > (image.width - move.offsetWidth)) x = image.width - move.offsetWidth;
+            if(y > image.height - move.offsetHeight) y = image.height - move.offsetHeight;
+            move.style.left = x + 'px';
+            move.style.top = y + 'px';
+
+            ctx.drawImage(image, move.offsetLeft, move.offsetTop, move.offsetWidth, move.offsetHeight, 0,0,move.offsetWidth,move.offsetHeight);
+
+            var imgData = ctx.getImageData(0,0,c.width, c.height);
+            console.log(imgData);
+        }
+
+        document.onmouseup = function(){
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+    }
+
+
+    // Converts image to canvas; returns new canvas element
+    function convertImageToCanvas(image, width, height) {
+        var canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0, width, height);
+
+        return canvas;
+    }
+    
+    save.onclick = function () {
+        //save.href = c.toDataURL("image/png")
+        //var imgData = ctx.getImageData(0,0,c.width, c.height);
+        //image.src = canvas.toDataURL("image/png");
+
+        alert(c.toDataURL("image/png"));
+        alert(c.toDataURL("image/png").replace(/^data:image\/(png|jpg);base64,/, ""));
+    }
+
+    // Converts canvas to an image
+    function convertCanvasToImage(canvas) {
+        var image = new Image();
+        image.src = canvas.toDataURL("image/png");
+        return image;
+    }
+
+</script>
+
+
+</body>
+
+
+
+</html>
