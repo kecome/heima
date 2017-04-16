@@ -130,12 +130,55 @@
     }
     
     save.onclick = function () {
-        //save.href = c.toDataURL("image/png")
+        save.href = c.toDataURL("image/png")
         //var imgData = ctx.getImageData(0,0,c.width, c.height);
         //image.src = canvas.toDataURL("image/png");
 
-        alert(c.toDataURL("image/png"));
-        alert(c.toDataURL("image/png").replace(/^data:image\/(png|jpg);base64,/, ""));
+//        alert(c.toDataURL("image/png"));
+//        var str = c.toDataURL("image/png").replace(/^data:image\/(png|jpg);base64,/, "");
+//        alert(str.length);
+//        alert(str);
+
+        //向后台发送http post请求
+        var xmlhttp;
+        if (window.XMLHttpRequest){
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        }else{// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        if(xmlhttp==null) {
+            alert('您的浏览器不支持AJAX！');
+            return;
+        }
+
+        var url="http://localhost:8080/upload";
+        xmlhttp.open("POST",url,true);
+       // xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        var data = c.toDataURL("image/png").replace(/^data:image\/(png|jpg);base64,/, "");
+        data=window.atob(data);
+        var ia = new Uint8Array(data.length);
+        for (var i = 0; i < data.length; i++) {
+            ia[i] = data.charCodeAt(i);
+        }
+        alert(ia.length);
+        var blob=new Blob([ia], {type:"image/png"});
+        var fd=new FormData();
+        fd.append('file',blob);
+        xmlhttp.send(fd);
+        xmlHttp.onreadystatechange=function () {
+            if(xmlHttp.readyState==1||xmlHttp.readyState==2||xmlHttp.readyState==3){
+                // 本地提示：加载中/处理中
+
+            }
+            if (xmlHttp.readyState==4 && xmlHttp.status==200){
+                var d=xmlHttp.responseText; // 返回值
+                alert(d);
+                // 处理返回值
+            }
+        }
+
     }
 
     // Converts canvas to an image
